@@ -45,6 +45,20 @@ async def send_link(message: Message):
 @dp.message_handler(text="🗺Bizning manzil")
 async def send_link(message: Message):
     await message.answer("🗺Lokatsiya: https://goo.gl/maps/TttmVbCShzxQmTK37")
+    
+    
+@dp.message_handler(text="📞Biz bilan bo'glanish")
+async def send_message(message: Message):
+    await message.answer("Tel. raqam: +998909647377 +998993724744\n"
+                         "Email: car_service@gmail.com\n"
+                         "instagram: https://www.instagram.com/champion_tuning/?hl=ru")
+    
+@dp.message_handler(text="🌐Biz haqimizda")
+async def send_message(message: Message):
+    await message.answer("Champion Tuning 2018 yil tashkil to'pgan.\n O'sha vaqtan boshlab mijozlarga hizmat korsatib kelyapti.\n Biz hodimlar hozirgacha kuchli malaka"
+                         "bilan ozi ishlarini olib borishadi.\n Bizning hizmatlarga kelsak dvigatellarga texnik xizmat ko'rsatish va ta'mirlash"
+                         "tortib, \n avtomobil tanasini tuzatish bo'lgan protseslarni o'z ichiga oladi")
+
 
 
 @dp.message_handler(text="🔧Muntazam parvarishlash")
