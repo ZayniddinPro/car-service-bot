@@ -1,10 +1,5 @@
 import typing
 
-from . import base
-from . import fields
-from .message import Message
-from .user import User
-
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 from aiogram.dispatcher.filters import Command
