@@ -8,4 +8,4 @@ This bot will work properly with the usage of these requirements:
 4. How to run car service_bot:
 6. python pip install -r requirements.txt (for installing all counted packages above)
 7. You should write (python manage.py migrate) in terminal to run django and database
-8. Don't forget to open new .env file and take new token from BotFather
+8. Don't forget to open new .env file and take new token from BotFather and add your ID from Jsonbot
