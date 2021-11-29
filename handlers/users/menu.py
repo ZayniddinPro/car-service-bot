@@ -194,33 +194,8 @@ Vaqti: {cartime}
     car_order.payment = False
 
     car_order.save()
-
-
-    await call.message.answer(text, reply_markup=confirm_btn)
-
-    await state.set_state("confirm_or_cancel")
-
-
-
-@dp.callback_query_handler(main_callback_data.filter(), state="cartime")
-async def get_time_and_confirm(call: types.CallbackQuery, callback_data: dict, state: FSMContext):
-    await call.answer()
-    cartime = callback_data.get("cartime")
-    await state.update_data(cartime=cartime)
-    await call.message.edit_reply_markup()
-    data = await state.get_data()
-    name = data.get("name")
-    phone = data.get("phone")
-    car_name = data.get("car_name")
-    text = f"""
-Ism: {name}
-
-Telfon: {phone}
-
-Mashina turi: {car_name}
-
-Vaqti: {cartime}
-"""
+    
+    
     car_order = Order()
     car_order.servic_type = "🚘Yangi va eski avtomobillarni tayyorlash va sotish"
     car_order.full_name = name
@@ -231,15 +206,79 @@ Vaqti: {cartime}
 
     car_order.save()
 
+
+    car_order = Order()
+    car_order.servic_type = "🕹Avtomatik va mexanik uzatmalarni ta'mirlash"
+    car_order.full_name = name
+    car_order.phone_num = phone
+    car_order.car_name = car_name
+    car_order.cartime = cartime
+    car_order.payment = False
+
+    car_order.save()
+
+
+    car_order = Order()
+    car_order.servic_type = "🏎Dvigatellarga texnik xizmat ko'rsatish va ta'mirlash"
+    car_order.full_name = name
+    car_order.phone_num = phone
+    car_order.car_name = car_name
+    car_order.cartime = cartime
+    car_order.payment = False
+
+    car_order.save()
+
+
+    car_order = Order()
+    car_order.servic_type = "🎨Avtomobil tanasini tuzatish"
+    car_order.full_name = name
+    car_order.phone_num = phone
+    car_order.car_name = car_name
+    car_order.cartime = cartime
+    car_order.payment = False
+
+    car_order.save()
+
+
+    car_order = Order()
+    car_order.servic_type = "🪛Avtomobillarda elektr jihozlarini ta'mirlash"
+    car_order.full_name = name
+    car_order.phone_num = phone
+    car_order.car_name = car_name
+    car_order.cartime = cartime
+    car_order.payment = False
+
+    car_order.save()
+
+
+    car_order = Order()
+    car_order.servic_type = "🚙Avtomobillar va ehtiyot qismlarni tiklash"
+    car_order.full_name = name
+    car_order.phone_num = phone
+    car_order.car_name = car_name
+    car_order.cartime = cartime
+    car_order.payment = False
+
+    car_order.save()
+
+
+    car_order = Order()
+    car_order.servic_type = "🚀Tashqi va ichki tuning"
+    car_order.full_name = name
+    car_order.phone_num = phone
+    car_order.car_name = car_name
+    car_order.cartime = cartime
+    car_order.payment = False
+
+    car_order.save()
+
+
+
     await call.message.answer(text, reply_markup=confirm_btn)
 
     await state.set_state("confirm_or_cancel")
 
 
-@dp.callback_query_handler(text="cancel")
-async def back_to_services_fun(call: CallbackQuery):
-    await call.message.delete()
-    await call.message.answer("Servis turini tanlang", reply_markup=menuType)
 
  
 
